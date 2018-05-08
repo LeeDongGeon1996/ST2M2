@@ -33,6 +33,8 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
+		MysqlConnector.getConnection();
+		
 		return "home";
 	}
 	
