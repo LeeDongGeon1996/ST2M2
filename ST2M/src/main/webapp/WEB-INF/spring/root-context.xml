@@ -14,5 +14,12 @@
 		<property name="password" value="asasd159"></property>
 	</bean>
 
+	<bean id="mysqlConnector"
+		class="kw.comso.dao.MysqlConnector">
+		<property name="dataSource"
+			ref="dataSource"></property>
+		
+	</bean>
+
 
 </beans>

@@ -5,21 +5,31 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
+/*
+ * 현재는 싱글톤으로 구현했으나 
+ * 나중에 pooling기능이 있는 dataSource클래스를 사용하여 커넥션풀을 이용할 수 있도록 개선해야함.
+ * 아니면 JdbcTemplate의 사용을 고려해볼것.
+ */
 public class MysqlConnector {
 
-	@Autowired
-	private transient static DataSource ds;
+	private transient DataSource dataSource;
 	private static Connection connection = null;
 	
-	public static Connection getConnection() {
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+	
+	public Connection getConnection() {
 		if(MysqlConnector.connection == null) {
 			try {
-				connection = ds.getConnection();
+				connection = dataSource.getConnection();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
+		
+		System.out.println(connection);
 		
 		return connection;
 	}
