@@ -21,7 +21,7 @@ public class MysqlDAO {
 		
 		Connection conn = mysqlConnector.getConnection();
 		PreparedStatement ps;
-		/*
+		
 		try {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, member.getName());
@@ -30,7 +30,6 @@ public class MysqlDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		*/
 		
 	}
 }
