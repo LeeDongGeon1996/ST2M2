@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kw.comso.dao.MysqlConnector;
+import kw.comso.service.MemberService;
 
 @Controller
 public class MemberController {
@@ -21,6 +22,14 @@ public class MemberController {
 	
 	@Autowired
 	private MysqlConnector mysqlConnector;
+	
+	@Autowired
+	private MemberService memberService;
+	
+	@RequestMapping(value = "/inserttest", method = RequestMethod.GET)
+	public void dbInsertTest(Model model) {
+		memberService.registerMember();
+	}
 	
 	@RequestMapping(value = "/dbtest", method = RequestMethod.GET)
 	public String dbConnectionTest(Model model) {
