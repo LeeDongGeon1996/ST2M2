@@ -46,9 +46,15 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public boolean deleteMember(MemberVO member) {
+	public boolean deleteMember(final MemberVO member) {
+		String sql = "DELETE FROM test.member WHERE player_name = ?";
 		
-		return false;
+		return this.jdbctemplate.update(sql, new PreparedStatementSetter() {
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				ps.setString(1, member.getName());
+				
+			}}) > 0 ? true : false;
 	}
 	
 	

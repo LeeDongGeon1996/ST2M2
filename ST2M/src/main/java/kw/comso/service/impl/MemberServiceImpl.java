@@ -25,4 +25,13 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public boolean deleteMember() {
+		MemberVO member= new MemberVO();
+		member.setName("testuser");
+		member.setAge(23);
+		
+		return memberDAO.deleteMember(member);
+	}
+
 }

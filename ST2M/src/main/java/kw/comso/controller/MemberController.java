@@ -23,9 +23,23 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping(value = "/inserttest", method = RequestMethod.GET)
-	public void dbInsertTest(Model model) {
-		memberService.registerMember();
+	public String dbInsertTest(Model model) {
+		boolean is = false;
+		is = memberService.registerMember();
+	
+		model.addAttribute("serverTime", is);		
+		return "home";
 	}
+	
+	@RequestMapping(value = "/deletetest", method = RequestMethod.GET)
+	public String dbDeleteTest(Model model) {
+		boolean is = false;
+		is = memberService.deleteMember();
+	
+		model.addAttribute("serverTime", is);		
+		return "home";
+	}
+	
 	
 	@RequestMapping(value = "/dbtest", method = RequestMethod.GET)
 	public String dbConnectionTest(Model model) {

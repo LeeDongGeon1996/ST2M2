@@ -7,5 +7,5 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import kw.comso.dto.MemberVO;
 
 public class MysqlDAO {
-
+	//필요없는파일.
 }
