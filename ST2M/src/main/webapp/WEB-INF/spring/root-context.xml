@@ -21,22 +21,15 @@
 		<property name="password" value="${mysql.password}"></property>
 	</bean>
 
-	<bean id="mysqlConnector" class="kw.comso.dao.MysqlConnector">
-		<property name="dataSource" ref="dataSource"></property>
-
-	</bean>
-	
 	<!-- DAO -->
-	<bean id="mysqlDAO"
-		class="kw.comso.dao.MysqlDAO">
-		<property name="mysqlConnector" ref="mysqlConnector"></property>
+	<bean id="memberDAO" class="kw.comso.dao.MemberDAOImpl">
+		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
-	
+
 	<!-- Services -->
 	<bean id="memberService"
 		class="kw.comso.service.impl.MemberServiceImpl">
-		<property name="mysqlDAO" ref="mysqlDAO"></property>
+		<property name="memberDAO" ref="memberDAO"></property>
 	</bean>
 
 

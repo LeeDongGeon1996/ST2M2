@@ -12,16 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import kw.comso.dao.MysqlConnector;
 import kw.comso.service.MemberService;
 
 @Controller
 public class MemberController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	
-	@Autowired
-	private MysqlConnector mysqlConnector;
 	
 	@Autowired
 	private MemberService memberService;
@@ -35,18 +31,9 @@ public class MemberController {
 	public String dbConnectionTest(Model model) {
 		
 		boolean is = false;
-		
-		if(mysqlConnector.getConnection() == null) {
-			is = false;
-		}
-		else {
-			is = true;
-		}
-		
-		model.addAttribute("serverTime", "DB Connection : " + is);
-		
-		//mysqlConnector.getConnection();
-		
+		is = memberService.registerMember();
+	
+		model.addAttribute("serverTime", is);		
 		return "home";
 	}
 	

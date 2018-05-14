@@ -2,25 +2,26 @@ package kw.comso.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import kw.comso.dao.MysqlDAO;
+import kw.comso.dao.MemberDAOImpl;
 import kw.comso.dto.MemberVO;
 import kw.comso.service.MemberService;
 
 public class MemberServiceImpl implements MemberService {
 
 	@Autowired
-	MysqlDAO mysqlDAO;
+	MemberDAOImpl memberDAO;
 	
-	public void setMysqlDAO(MysqlDAO mysqlDAO){
-		this.mysqlDAO = mysqlDAO;	
+	public void setMemberDAO(MemberDAOImpl memberDAO){
+		this.memberDAO = memberDAO;	
 	}
 	
 	@Override
-	public void registerMember() {
+	public boolean registerMember() {
 		MemberVO member= new MemberVO();
 		member.setName("testuser");
 		member.setAge(23);
-		mysqlDAO.insert(member, "member");
+		
+		return memberDAO.insertMember(member);
 		
 	}
 

@@ -1,12 +1,11 @@
 package kw.comso.dao;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import kw.comso.dto.MemberVO;
 
-public class MemberDAO {
+interface MemberDAO {
+	boolean insertMember(MemberVO member);
+	boolean updateMember(MemberVO member);
+	boolean deleteMember(MemberVO member);
 
-	@Autowired
-	private MysqlConnector mysqlConnector;
-	
-	
 }
  
