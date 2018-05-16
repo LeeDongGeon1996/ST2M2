@@ -1,5 +1,8 @@
+//사용자로부터 요청을받음 - 요청 배분
+
 package kw.comso.controller;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kw.comso.service.MemberService;
+import kw.comso.service.pdfParcingService;
 
 @Controller
 public class MemberController {
@@ -23,6 +27,7 @@ public class MemberController {
 	private MemberService memberService;
 	
 	@RequestMapping(value = "/inserttest", method = RequestMethod.GET)
+	//인서트 요청
 	public String dbInsertTest(Model model) {
 		boolean is = false;
 		is = memberService.registerMember();
@@ -64,6 +69,14 @@ public class MemberController {
 		model.addAttribute("serverTime", formattedDate );
 		
 		//mysqlConnector.getConnection();
+		
+		
+			try {
+				new pdfParcingService().parcer();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
 		return "home";
 	}

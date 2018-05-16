@@ -1,3 +1,5 @@
+//우리가 이용할 객체들
+
 package kw.comso.dto;
 
 public class MemberVO {

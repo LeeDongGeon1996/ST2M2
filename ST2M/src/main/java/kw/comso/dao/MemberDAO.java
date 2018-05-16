@@ -1,3 +1,5 @@
+//Database access object
+
 package kw.comso.dao;
 
 import kw.comso.dto.MemberVO;
