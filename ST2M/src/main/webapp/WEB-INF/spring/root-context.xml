@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="propertyConfigurer"
@@ -15,7 +17,8 @@
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="${mysql.driverClassName}"></property>
+		<property name="driverClassName"
+			value="${mysql.driverClassName}"></property>
 		<property name="url" value="${mysql.url}"></property>
 		<property name="username" value="${mysql.username}"></property>
 		<property name="password" value="${mysql.password}"></property>
@@ -24,13 +27,14 @@
 	<!-- DAO -->
 	<bean id="memberDAO" class="kw.comso.dao.MemberDAOImpl">
 		<property name="dataSource" ref="dataSource" />
+		<property name="mongoTemplate" ref="mongoTemplate" />
 	</bean>
 
 	<!-- Services -->
 	<bean id="memberService"
 		class="kw.comso.service.impl.MemberServiceImpl">
 		<property name="memberDAO" ref="memberDAO"></property>
+		
 	</bean>
-
 
 </beans>

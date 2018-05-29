@@ -5,6 +5,10 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 
@@ -18,16 +22,24 @@ import kw.comso.dto.MemberVO;
  */
 public class MemberDAOImpl implements MemberDAO {
 
+	private MongoTemplate mongoTemplate;
 	private JdbcTemplate jdbctemplate;
-	
+ 
 	public void setDataSource(DataSource dataSource) {
 		this.jdbctemplate = new JdbcTemplate(dataSource);	
 	}
+
+	public void setMongoTemplate(MongoTemplate mongoTemplate) {
+		this.mongoTemplate = mongoTemplate;
+	}
+	
 	
 	@Override
 	public boolean insertMember(final MemberVO member) {
 		
 		String sql = "INSERT INTO test.member values(?,?)";
+		
+		this.mongoTemplate.insert(member, "member");
 		
 		return this.jdbctemplate.update(sql, new PreparedStatementSetter() {
 			@Override
