@@ -9,3 +9,8 @@ interface MemberDAO {
 
 }
  
+
+interface junmantestDAO{
+	boolean insertMember(MemberVO member);
+	boolean deleteMember(MemberVO member);
+}
