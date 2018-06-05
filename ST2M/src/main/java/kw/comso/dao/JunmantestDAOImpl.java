@@ -13,7 +13,7 @@ import kw.comso.dto.MemberInfoVO;
  * 아니면 PreparedStatementCreator를 사용하여 PreparedStatement형태로 sql을 넘길지 모르겟음.
  * 상황에따라 다르다고하는데 (같은 sql문이 반복되어 실행 될 필요가 있을때 라던지) 구분을 못하겠음.
  */
-public class junmantestDAOImpl implements junmantestDAO {
+public class JunmantestDAOImpl implements JunmantestDAO {
 
 	private MongoTemplate mongoTemplate;
  
