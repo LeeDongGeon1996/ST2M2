@@ -1,5 +1,8 @@
 package kw.comso.dao;
 
-public class junmantestDAO {
+import kw.comso.dto.MemberInfoVO;
 
+interface junmantestDAO{
+	boolean insertMember(MemberInfoVO member);
+	boolean deleteMember(MemberInfoVO member);
 }
