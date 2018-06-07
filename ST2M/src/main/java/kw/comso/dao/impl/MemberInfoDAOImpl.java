@@ -12,27 +12,20 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 
 public class MemberInfoDAOImpl implements MemberInfoDAO{
 
-<<<<<<< HEAD
-	MongoTemplate mongoTemplate;
-=======
 	private MongoTemplate mongoTemplate;
 
 	public void setMongoTemplate(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
 	}
->>>>>>> refs/remotes/origin/dao_update_구현
+
 	
 	@Override
 	public boolean insertMemberInfo(MemberInfoVO member) {
-<<<<<<< HEAD
+
 		this.mongoTemplate.insert(member, "member");
 		
 		return true;
-=======
-		
-		//mongoTemplate.inser
-		return false;
->>>>>>> refs/remotes/origin/dao_update_구현
+
 	}
 
 	@Override
