@@ -8,6 +8,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import kw.comso.dao.MemberInfoDAO;
 import kw.comso.dto.MemberInfoVO;
 
+import org.springframework.data.mongodb.core.MongoTemplate;
+
 public class MemberInfoDAOImpl implements MemberInfoDAO{
 
 	private MongoTemplate mongoTemplate;
@@ -15,24 +17,27 @@ public class MemberInfoDAOImpl implements MemberInfoDAO{
 	public void setMongoTemplate(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
 	}
+
 	
 	@Override
 	public boolean insertMemberInfo(MemberInfoVO member) {
+
+		this.mongoTemplate.insert(member, "member");
 		
-		//mongoTemplate.inser
-		return false;
+		return true;
+
 	}
 
 	@Override
 	public boolean updateMemberInfo(MemberInfoVO member) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean deleteMemberInfo(MemberInfoVO member) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean removeMemberInfo(MemberInfoVO member) {
+		this.mongoTemplate.remove(member, "member");
+		
+		return true;
 	}
 
 }
