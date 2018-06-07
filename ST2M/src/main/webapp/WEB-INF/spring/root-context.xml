@@ -29,11 +29,28 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mongoTemplate" ref="mongoTemplate" />
 	</bean>
+	
+	<bean id="memberInfoDAO" class="kw.comso.dao.impl.MemberInfoDAOImpl">
+		<property name="mongoTemplate" ref="mongoTemplate" />
+	</bean>
+	
+	<bean id="questionDAO" class="kw.comso.dao.impl.QuestionDAOImpl">
+		<property name="mongoTemplate" ref="mongoTemplate" />
+	</bean>
+	
+	<bean id="memberRelationDAO" class="kw.comso.dao.impl.MemberRelationDAOImpl">
+		<property name="mongoTemplate" ref="mongoTemplate" />
+	</bean>
+	
+	<bean id="testPaperDAO" class="kw.comso.dao.impl.TestPaperDAOImpl">
+		<property name="mongoTemplate" ref="mongoTemplate" />
+	</bean>
 
 	<!-- Services -->
 	<bean id="memberService"
 		class="kw.comso.service.impl.MemberServiceImpl">
 		<property name="memberDAO" ref="memberDAO"></property>
+		<property name="memberRelationDAO" ref="memberRelationDAO"></property>
 		
 	</bean>
 
