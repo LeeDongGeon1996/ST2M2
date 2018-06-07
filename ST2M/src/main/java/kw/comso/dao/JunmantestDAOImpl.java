@@ -33,7 +33,7 @@ public class JunmantestDAOImpl implements JunmantestDAO {
 		return true;
 	}
 
-	public boolean deleteMember(final MemberInfoVO member) {
+	public boolean removeMember(final MemberInfoVO member) {
 
 		this.mongoTemplate.remove(member, "member");
 		
