@@ -5,13 +5,13 @@ import java.util.Calendar;
 //이름. id(이메일) , pw, 권한, 생년월일, {{지역}},{{전화번호}})
 public class MemberInfoVO {
 
-	String name;
-	String email;
-	String password;
-	Calendar birth;
-	String address;
-	String pNum;
-	String auth;
+	private String name;
+	private String email;
+	private String password;
+	private Calendar birth;
+	private String address;
+	private String pNum;
+	private String auth;	//개인 , 학생, 선생님
 
 	// setter
 

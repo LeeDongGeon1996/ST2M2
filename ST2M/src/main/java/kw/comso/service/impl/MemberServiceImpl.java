@@ -2,7 +2,7 @@ package kw.comso.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import kw.comso.dao.MemberDAOImpl;
+import kw.comso.dao.impl.MemberDAOImpl;
 import kw.comso.dto.MemberVO;
 import kw.comso.service.MemberService;
 
