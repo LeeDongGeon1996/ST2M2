@@ -1,4 +1,4 @@
-package kw.comso.dao;
+package kw.comso.dao.impl;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
 
+import kw.comso.dao.MemberDAO;
 import kw.comso.dto.MemberVO;
 
 
@@ -41,13 +42,7 @@ public class MemberDAOImpl implements MemberDAO {
 		
 		this.mongoTemplate.insert(member, "member");
 		
-		return this.jdbctemplate.update(sql, new PreparedStatementSetter() {
-			@Override
-			public void setValues(PreparedStatement ps) throws SQLException {
-				ps.setString(1, member.getName());
-				ps.setInt(2, member.getAge());
-				
-			}}) > 0 ? true : false;
+		return true;
 		
 	}
 
