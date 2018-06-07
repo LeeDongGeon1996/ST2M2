@@ -8,9 +8,3 @@ public interface MemberDAO {
 	boolean deleteMember(MemberVO member);
 
 }
- 
-
-interface junmantestDAO{
-	boolean insertMember(MemberVO member);
-	boolean deleteMember(MemberVO member);
-}

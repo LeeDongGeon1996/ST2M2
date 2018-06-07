@@ -1,5 +1,11 @@
 package kw.comso.dao;
 
-public interface QuestionDAO {
+import kw.comso.dto.QuestionVO;
 
+public interface QuestionDAO {
+	boolean insertQuestion(QuestionVO member);
+
+	boolean updateQuestion(QuestionVO member);
+
+	boolean deleteQuestion(QuestionVO member);
 }

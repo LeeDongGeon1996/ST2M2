@@ -1,5 +1,11 @@
 package kw.comso.dao;
 
-public interface MemberInfoDAO {
+import kw.comso.dto.MemberInfoVO;
 
+public interface MemberInfoDAO {
+	boolean insertMemberInfo(MemberInfoVO member);
+
+	boolean updateMemberInfo(MemberInfoVO member);
+
+	boolean deleteMemberInfo(MemberInfoVO member);
 }
