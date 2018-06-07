@@ -40,6 +40,17 @@ public class MemberController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "/updatetest", method = RequestMethod.GET)
+	public String dbUpdateTest(Model model) {
+		boolean is = false;
+		is = memberService.updateMember();
+		
+		
+		
+		model.addAttribute("serverTime", is);		
+		return "home";
+	}
+	
 	
 	@RequestMapping(value = "/dbtest", method = RequestMethod.GET)
 	public String dbConnectionTest(Model model) {

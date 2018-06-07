@@ -4,4 +4,5 @@ public interface MemberService {
 
 	boolean registerMember();
 	boolean deleteMember();
+	boolean updateMember();
 }
