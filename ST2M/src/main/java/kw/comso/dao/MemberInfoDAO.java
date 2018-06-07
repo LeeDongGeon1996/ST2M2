@@ -7,5 +7,5 @@ public interface MemberInfoDAO {
 
 	boolean updateMemberInfo(MemberInfoVO member);
 
-	boolean deleteMemberInfo(MemberInfoVO member);
+	boolean removeMemberInfo(MemberInfoVO member);
 }
