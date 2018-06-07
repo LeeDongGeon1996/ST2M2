@@ -7,5 +7,9 @@ public interface MemberDAO {
 	boolean updateMember(MemberVO member);
 	boolean deleteMember(MemberVO member);
 
+<<<<<<< HEAD
 }
  
+=======
+}
+>>>>>>> branch 'JMC_after_mongo' of https://github.com/LeeDongGeon1996/ST2M2.git
