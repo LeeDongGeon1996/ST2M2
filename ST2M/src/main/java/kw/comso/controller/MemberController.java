@@ -28,7 +28,7 @@ public class MemberController {
 		is = memberService.registerMember();
 	
 		model.addAttribute("serverTime", is);		
-		return "home";
+		return "signupform";
 	}
 	
 	@RequestMapping(value = "/deletetest", method = RequestMethod.GET)

@@ -1,5 +1,5 @@
 <!-- 회원가입 폼 -->
-
+<%@page contentType="text/html;charset=UTF-8"%>
 <html>
     <head>
         <title>회원가입</title>
