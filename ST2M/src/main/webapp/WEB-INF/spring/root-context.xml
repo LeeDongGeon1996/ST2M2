@@ -50,6 +50,7 @@
 	<bean id="memberService"
 		class="kw.comso.service.impl.MemberServiceImpl">
 		<property name="memberDAO" ref="memberDAO"></property>
+		<property name="memberInfoDAO" ref="memberInfoDAO"></property>
 		<property name="memberRelationDAO" ref="memberRelationDAO"></property>
 		
 	</bean>

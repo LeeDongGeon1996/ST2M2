@@ -3,7 +3,7 @@ package kw.comso.dto;
 import java.util.ArrayList;
 
 public class MemberRelationVO {
-	
+
 	private String email;
 	private String myTeacher;
 	private ArrayList<String> myStudent;
@@ -12,11 +12,9 @@ public class MemberRelationVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public void setMyTeacher(String myTeacher) {
 		this.myTeacher = myTeacher;
 	}
-
 	public void setMyStudent(ArrayList<String> myStudent) {
 		this.myStudent = myStudent;
 	}
@@ -25,12 +23,10 @@ public class MemberRelationVO {
 	public String getEmail() {
 		return this.email;
 	}
-
 	public String getMyTeacher() {
 		return this.myTeacher;
 	}
-
 	public ArrayList<String> getMyStudent() {
-         return this.myStudent;
-      }
+		return this.myStudent;
+	}
 }

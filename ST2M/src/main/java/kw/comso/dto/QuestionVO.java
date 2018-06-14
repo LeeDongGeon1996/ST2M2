@@ -14,49 +14,39 @@ public class QuestionVO { // 각 문제 하나하나를 저장하는 공간, 시험지 아님!!!
 	public void setQuestionIDNum(int questionIDNum) {
 		this.questionIDNum = questionIDNum;
 	}
-
 	public void setMulORSub(int mulORSub) {
 		this.mulORSub = mulORSub;
 	}
-
 	public void setPassage(String passage) {
 		this.passage = passage;
 	}
-
 	public void setImageLink(String imageLink) {
 		this.imageLink = imageLink;
 	}
-
 	public void setMulChoice(String mulChoice) {
 		this.mulChoice = mulChoice;
 	}
-
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
+	
 	// getter
-
-	public int setQuestionIDNum() {
+	public int getQuestionIDNum() {
 		return this.questionIDNum;
 	}
-
-	public int setMulORSub() {
+	public int getMulORSub() {
 		return this.mulORSub;
 	}
-
-	public String setPassage() {
+	public String getPassage() {
 		return this.passage;
 	}
-
-	public String setImageLink() {
+	public String getImageLink() {
 		return this.imageLink;
 	}
-
-	public String setMulChoice() {
+	public String getMulChoice() {
 		return this.mulChoice;
 	}
-
-	public String setAnswer() {
+	public String getAnswer() {
 		return this.answer;
 	}
 }
