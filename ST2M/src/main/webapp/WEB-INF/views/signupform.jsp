@@ -1,5 +1,6 @@
 <!-- 회원가입 폼 -->
 <%@page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
     <head>
         <title>회원가입</title>
@@ -17,15 +18,41 @@
             <div class="page-header">
                 <h1>회원가입 <small>ST2M</small></h1>
             </div>
+            
+            
+            
+            
+            <form:form modelAttribute="infoVO" action="getinfo" method="POST">
+    <p>
+        값1<br/>
+        <form:input path="name"/>
+    </p>
+    <p>
+        값2<br/>
+        <form:input path="password"/>
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form:form>
+
+
+
+
+
             <div class="col-md-6 col-md-offset-3">
-                <form role="form">
+                <form role="form" modelAttribute="infoVO" action="getinfo" method="POST">
+                    <div class="form-group">
+                        <label for="InputName">성함</label>
+                        <input path="name" name="name" type="textbox" class="form-control" id="InputName" placeholder="성함">
+                    </div>
                     <div class="form-group">
                         <label for="InputEmail">이메일 주소(ID)</label>
-                        <input type="email" class="form-control" id="InputEmail" placeholder="이메일 주소(ID)">
+                        <input name="email" type="email" class="form-control" id="InputEmail" placeholder="이메일 주소(ID)">
                     </div>
                     <div class="form-group">
                         <label for="InputPassword1">비밀번호</label>
-                        <input type="password" class="form-control" id="InputPassword1" placeholder="비밀번호">
+                        <input path=password name="password" type="password" class="form-control" id="InputPassword1" placeholder="비밀번호">
                     </div>
                     <div class="form-group">
                         <label for="InputPassword2">비밀번호 확인</label>
@@ -34,25 +61,25 @@
                     </div>
                     <div class="form-group">
                         <label for="InputBirthday">생일</label>
-                        <input type="date" class="form-control" id="InputBirthday" placeholder="생년월일">
+                        <input name="birth" type="date" class="form-control" id="InputBirthday" placeholder="생년월일">
                     </div>
                     <div class="form-group">
                         <label for="InputAddress">주소</label>
-                        <input type="textbox" class="form-control" id="InputAddress" placeholder="자택 주소">
+                        <input name="address" type="textbox" class="form-control" id="InputAddress" placeholder="자택 주소">
                     </div>
                     <div class="form-group">
                         <label for="InputPhoneNum">주소</label>
-                        <input type="tel" class="form-control" id="InputPhoneNum" placeholder="휴대폰 번호 : - 없이 입력해 주세요!">
+                        <input name="pNum" type="tel" class="form-control" id="InputPhoneNum" placeholder="휴대폰 번호 : - 없이 입력해 주세요!">
                     </div>
                     <label for="InputAuthority">구분</label>
                     <div class="radio">
                         <label class="primary">
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            <input name="auth" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
                             교육자(선생님)
                         </label>
                     
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            <input  type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
                             학습자(학생)
                         </label>
                     
@@ -62,10 +89,10 @@
                         </label>
                     </div>
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-info">회원가입</button>
+                        <button type="submit" class="btn btn-info" value="Submit">회원가입</button>
                         <button type="submit" class="btn btn-warning">가입취소</button>
                     </div>
-                </form>
+                <form>
             </div>
         </article>
     </body>
