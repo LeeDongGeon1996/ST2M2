@@ -30,27 +30,27 @@ public class MemberController {
 		//Model¿¡ VO°´Ã¼ Àü´Þ
 		modelMap.addAttribute("infoVO",infoVO);
 		
-	memberService.registerMember(infoVO);
 		return "signupform";
 	}
 	@RequestMapping(value="/getinfo",method= {RequestMethod.POST,RequestMethod.GET})
 	public String getinfo(MemberInfoVO infoVO,ModelMap modelMap) {
-		
+		boolean is;
 		
 		
 		modelMap.addAttribute("name",infoVO.getName());
 		modelMap.addAttribute("password",infoVO.getPassword());
-		
+		is = memberService.registerMember(infoVO);
+		System.out.println(is);
 		System.out.println("id=" + infoVO.getName());
 		System.out.println("pw=" + infoVO.getPassword());
 		return "home";
 	}
-	
-	
+}
+	/*
 	@RequestMapping(value = "/updatetest", method = RequestMethod.GET)
 	public String dbUpdateTest(Model model) {
 		boolean is = false;
-		is = memberService.updateMember();
+		is = memberService.updateMember(model);
 		
 		
 		
@@ -88,3 +88,4 @@ public class MemberController {
 	
 	
 }
+*/
