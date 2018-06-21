@@ -8,7 +8,7 @@ public class MemberInfoVO {
    String name;
    String email;
    String password;
-   Calendar birth;
+   String birth;
    String address;
    String pNum;
    String auth;
@@ -24,7 +24,7 @@ public class MemberInfoVO {
    public void setPassword(String password) {
       this.password = password;
    }
-   public void setBirth(Calendar birth) {
+   public void setBirth(String birth) {
       this.birth = birth;
    }
    public void setAddress(String address) {
@@ -48,7 +48,7 @@ public class MemberInfoVO {
    public String getPassword() {
       return this.password;
    }
-   public Calendar getBirth() {
+   public String getBirth() {
       return this.birth;
    }
    public String getAddress() {

@@ -40,6 +40,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public boolean registerMember(MemberInfoVO member) {
 
+		//
 		MemberInfoVO dup = this.memberInfoDAO.findOne("email", member.getEmail());
 		if(dup != null)
 			return false;
@@ -50,7 +51,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public boolean deleteMember(MemberInfoVO member) {
-
+		
 		return memberInfoDAO.removeMemberInfo(member);
 	}
 
@@ -62,6 +63,16 @@ public class MemberServiceImpl implements MemberService {
 		return true;
 		// return memberRelationDAO.updateMemberRelation(memrel, update2);
 
+	}
+	
+	private boolean check_pw(MemberInfoVO member) {
+		
+		MemberInfoVO account = this.memberInfoDAO.findOne("email", member.getEmail());
+		if (account != null) {
+			return member.getPassword() == account.getPassword();
+		} 
+		
+		return false;
 	}
 
 }

@@ -41,6 +41,9 @@ public class MemberController {
 		modelMap.addAttribute("password",infoVO.getPassword());
 		is = memberService.registerMember(infoVO);
 		System.out.println(is);
+		
+		
+
 		System.out.println("id=" + infoVO.getName());
 		System.out.println("pw=" + infoVO.getPassword());
 		return "home";
