@@ -1,11 +1,18 @@
 package kw.comso.dao;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+
 import kw.comso.dto.QuestionVO;
 
 public interface QuestionDAO {
-	boolean insertQuestion(QuestionVO member);
+	boolean insertQuestion(QuestionVO question);
 
-	boolean updateQuestion(QuestionVO member);
+	boolean updateQuestion(QuestionVO question, Hashtable<String, Object> updatedVal);
 
-	boolean deleteQuestion(QuestionVO member);
+	boolean removeQuestion(QuestionVO question);
+
+	QuestionVO findOne(String key, Object value, String[] fields);
+
+	ArrayList<QuestionVO> findAll(String key, Object value, String[] fields);
 }
