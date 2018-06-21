@@ -40,6 +40,8 @@ public class MemberController {
 		modelMap.addAttribute("name",infoVO.getName());
 		modelMap.addAttribute("password",infoVO.getPassword());
 		
+		memberService.registerMember(infoVO);
+		
 		System.out.println("id=" + infoVO.getName());
 		System.out.println("pw=" + infoVO.getPassword());
 		return "home";
