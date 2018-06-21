@@ -9,11 +9,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kw.comso.service.MemberService;
-
+import kw.comso.dto.*;
 @Controller
 public class MemberController {
 	
@@ -22,23 +23,28 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	@RequestMapping(value = "/inserttest", method = RequestMethod.GET)
-	public String dbInsertTest(Model model) {
-		boolean is = false;
-		is = memberService.registerMember();
-	
-		model.addAttribute("serverTime", is);		
+	@RequestMapping(value="/insertinfo",method=RequestMethod.GET)
+	public String insertinfo(ModelMap modelMap) {
+		//VO 按眉积己
+		MemberInfoVO infoVO=new MemberInfoVO();
+		//Model俊 VO按眉 傈崔
+		modelMap.addAttribute("infoVO",infoVO);
+		
+		return "signupform";
+	}
+	@RequestMapping(value="/getinfo",method= {RequestMethod.POST,RequestMethod.GET})
+	public String getinfo(MemberInfoVO infoVO,ModelMap modelMap) {
+		
+		
+		
+		modelMap.addAttribute("name",infoVO.getName());
+		modelMap.addAttribute("password",infoVO.getPassword());
+		
+		System.out.println("id=" + infoVO.getName());
+		System.out.println("pw=" + infoVO.getPassword());
 		return "home";
 	}
 	
-	@RequestMapping(value = "/deletetest", method = RequestMethod.GET)
-	public String dbDeleteTest(Model model) {
-		boolean is = false;
-		is = memberService.deleteMember();
-	
-		model.addAttribute("serverTime", is);		
-		return "home";
-	}
 	
 	@RequestMapping(value = "/updatetest", method = RequestMethod.GET)
 	public String dbUpdateTest(Model model) {
