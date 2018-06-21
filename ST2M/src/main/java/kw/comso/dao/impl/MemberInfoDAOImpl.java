@@ -68,6 +68,7 @@ public class MemberInfoDAOImpl implements MemberInfoDAO {
 		return found;
 	}
 
+	@Override
 	public MemberInfoVO findOne(String key, Object value) {
 		return findOne(key, value, null);
 	}
@@ -87,6 +88,7 @@ public class MemberInfoDAOImpl implements MemberInfoDAO {
 		return found;
 	}
 
+	@Override
 	public ArrayList<MemberInfoVO> findAll(String key, Object value) {
 		return findAll(key, value, null);
 	}
