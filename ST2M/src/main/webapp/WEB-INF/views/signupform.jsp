@@ -18,29 +18,29 @@
             <div class="page-header">
                 <h1>회원가입 <small>ST2M</small></h1>
             </div>
-            
-            
-            
-            
-            <form:form modelAttribute="infoVO" action="getinfo" method="POST">
-    <p>
-        값1<br/>
-        <form:input path="name"/>
-    </p>
-    <p>
-        값2<br/>
-        <form:input path="password"/>
-    </p>
-    <p>
-        <input type="submit" value="Submit">
-    </p>
-</form:form>
+
+
+
+
+		<form:form modelAttribute="infoVO" action="getinfo" method="POST">
+			<p>
+				값1<br />
+				<form:input path="name" />
+			</p>
+			<p>
+				값2<br />
+				<form:input path="password" class="form-control" />
+			</p>
+			<p>
+				<input type="submit" value="Submit">
+			</p>
+		</form:form>
 
 
 
 
 
-            <div class="col-md-6 col-md-offset-3">
+		<div class="col-md-6 col-md-offset-3">
                 <form role="form" modelAttribute="infoVO" action="getinfo" method="POST">
                     <div class="form-group">
                         <label for="InputName">성함</label>
