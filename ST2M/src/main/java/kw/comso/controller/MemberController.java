@@ -54,7 +54,7 @@ public class MemberController {
 		
 		
 		model.addAttribute("serverTime", is);		
-		return "home";
+		return "signupform";
 	}
 	
 	

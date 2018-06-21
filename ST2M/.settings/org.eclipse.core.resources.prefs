@@ -1,3 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
+=======
+>>>>>>> refs/remotes/origin/dao_update_구현
 encoding//src/main/webapp/WEB-INF/views/signupform.jsp=UTF-8
