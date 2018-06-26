@@ -17,7 +17,7 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
         <!-- ST2MCSS-->
-        <link href="${pageContext.request.contextPath}/css/ST2M-frontpage.css" rel="stylesheet" type="text/css">
+        <link href="ST2Mfrontpage.css" rel="stylesheet" type="text/css">
 
     </head>
 
