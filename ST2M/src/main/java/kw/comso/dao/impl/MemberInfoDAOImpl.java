@@ -64,7 +64,7 @@ public class MemberInfoDAOImpl implements MemberInfoDAO {
 		}
 
 		MemberInfoVO found = this.mongoTemplate.findOne(query, MemberInfoVO.class, TABLE_NAME);
-
+		
 		return found;
 	}
 
