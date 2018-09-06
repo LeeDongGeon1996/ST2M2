@@ -23,6 +23,15 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	
+	//시험지 에디터
+	@RequestMapping(value="testeditor",method=RequestMethod.GET)
+	public String testeditor() {
+		
+		return "editor1";
+	}
+	
+	//로그인 화면
 	@RequestMapping(value="/insertinfo",method=RequestMethod.GET)
 	public String insertinfo(ModelMap modelMap) {
 		//VO 객체생성
@@ -32,6 +41,8 @@ public class MemberController {
 		
 		return "signupform";
 	}
+	
+	//메인화면
 	@RequestMapping(value="/getinfo",method= {RequestMethod.POST,RequestMethod.GET})
 	public String getinfo(MemberInfoVO infoVO,ModelMap modelMap) {
 		boolean is;
@@ -49,6 +60,11 @@ public class MemberController {
 		return "home";
 	}
 }
+
+
+	
+
+
 	/*
 	@RequestMapping(value = "/updatetest", method = RequestMethod.GET)
 	public String dbUpdateTest(Model model) {

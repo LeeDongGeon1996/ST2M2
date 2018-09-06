@@ -14,10 +14,10 @@
         <title>ST2M-Main</title>
 
         <!-- BOOTSTRAP-->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="${pageContext.request.contextPath}/resources/bootstrap.min.css" rel="stylesheet" type="text/css">
 
         <!-- ST2MCSS-->
-        <link href="ST2Mfrontpage.css" rel="stylesheet" type="text/css">
+        <link href="${pageContext.request.contextPath}/resources/ST2Mfrontpage.css" rel="stylesheet">
 
     </head>
 
@@ -28,7 +28,7 @@
                 <a class="navbar-brand" href="Main.html">ST2M</a>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">name : ${name}</li>
+                        <li class="nav-item active nav-link">${name}</li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">홈
                                 <span class="sr-only">(current)</span>
